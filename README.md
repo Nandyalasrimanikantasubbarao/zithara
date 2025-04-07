@@ -11,11 +11,6 @@ A full-stack jewelry e-commerce website with a chatbot that finds similar jewelr
 
 🔧 Setup Instructions
 1. Clone the Repository
-bash
-Copy
-Edit
-git clone https://github.com/your-username/zithara-jewelry.git
-cd zithara-jewelry
 2. Install Dependencies
 Install backend and frontend dependencies:
 
