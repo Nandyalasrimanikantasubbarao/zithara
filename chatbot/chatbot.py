@@ -10,6 +10,7 @@ import re
 import logging
 import json
 from dotenv import load_dotenv
+from transformers import CLIPProcessor, CLIPModel
 
 load_dotenv(dotenv_path='../.env') 
 
@@ -18,6 +19,9 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 PRODUCT_API_URL = os.getenv("PRODUCT_API_URL")
 
+model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
+processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
+model.eval()
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
