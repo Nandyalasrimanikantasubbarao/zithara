@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import "./chatbot.css";
 
+const chatbotUrl = import.meta.env.VITE_REACT_APP_CHATBOT_URL;
+
 function Chatbot() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -14,7 +16,7 @@ function Chatbot() {
     setMessages((prev) => [...prev, { text: userMessage, sender: "user" }]);
 
     try {
-      const response = await fetch("http://localhost:5001/api/chat", {
+      const response = await fetch(`${chatbotUrl}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: userMessage }),
@@ -69,7 +71,7 @@ function Chatbot() {
     ]);
 
     try {
-      const response = await fetch("http://localhost:5001/api/upload", {
+      const response = await fetch(`${chatbotUrl}/api/upload`, {
         method: "POST",
         body: formData,
       });
