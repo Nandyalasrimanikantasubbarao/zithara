@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLoginMutation } from "../../redux/api/userAPiSlice";
+import { useLoginMutation } from "../../redux/api/userApiSlice";
 import { setCredientials } from "../../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
