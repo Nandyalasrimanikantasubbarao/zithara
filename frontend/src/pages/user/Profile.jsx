@@ -4,7 +4,7 @@ import { setCredientials } from "../../redux/features/auth/authSlice";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loader from "../../components/Loader";
-import { useProfileMutation } from "../../redux/api/userAPiSlice";
+import { useProfileMutation } from "../../redux/api/userApiSlice";
 
 function Profile() {
   const [username, setUserName] = useState("");

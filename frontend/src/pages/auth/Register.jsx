@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import { setCredientials } from "../../redux/features/auth/authSlice";
 import Loader from "../../components/Loader";
-import { useRegisterMutation } from "../../redux/api/userAPiSlice";
+import { useRegisterMutation } from "../../redux/api/userApiSlice";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
