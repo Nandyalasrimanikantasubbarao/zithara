@@ -24,5 +24,3 @@ services:
     envVars:
       - key: VITE_BACKEND_URL
         value: https://your-backend.onrender.com
-      - key: VITE_CHATBOT_URL
-        value: https://your-chatbot.onrender.com
