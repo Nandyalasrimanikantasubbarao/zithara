@@ -1,17 +1,15 @@
 services:
   - type: web
-    name: zithara-backend
+    name: backend
     env: node
     buildCommand: cd backend && npm install
-    startCommand: cd backend && node index.js
+    startCommand: cd backend && npm start
     envVars:
       - key: MONGO_URI
-        value: your-mongodb-uri
-      - key: NODE_ENV
-        value: production
+        value: your_mongo_uri_here
 
   - type: web
-    name: zithara-chatbot
+    name: chatbot
     env: python
     buildCommand: cd chatbot && pip install -r requirements.txt
     startCommand: cd chatbot && python app.py
@@ -20,11 +18,11 @@ services:
         value: production
 
   - type: static
-    name: zithara-frontend
+    name: frontend
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
     envVars:
       - key: VITE_BACKEND_URL
-        value: https://zithara-backend.onrender.com
+        value: https://your-backend.onrender.com
       - key: VITE_CHATBOT_URL
-        value: https://zithara-chatbot.onrender.com
+        value: https://your-chatbot.onrender.com
