@@ -5,4 +5,4 @@ Pillow
 torch
 git+https://github.com/openai/CLIP.git
 python-dotenv
-transformers
+transformers==4.37.2
