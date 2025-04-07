@@ -17,10 +17,13 @@ services:
       - key: FLASK_ENV
         value: production
 
-  - type: static
+  - type: web
     name: frontend
+    env: node
     buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: frontend/dist
+    startCommand: cd frontend && npx serve -s dist -l $PORT
     envVars:
       - key: VITE_BACKEND_URL
         value: https://your-backend.onrender.com
+      - key: VITE_CHATBOT_URL
+        value: https://your-chatbot.onrender.com
