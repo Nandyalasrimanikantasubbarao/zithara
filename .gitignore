@@ -1,0 +1,32 @@
+# Node.js
+node_modules/
+.env
+.env.local
+dist/
+build/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+*.env
+
+# Flask uploads/logs
+uploads/
+instance/
+*.log
+
+# React (Vite)
+frontend/dist/
+frontend/node_modules/
+frontend/.env
+
+# VS Code
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db

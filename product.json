@@ -1,0 +1,325 @@
+[
+  {
+    "name": "Diamond Solitaire Ring",
+    "image": "https://example.com/images/diamond-solitaire-ring.jpg",
+    "quantity": 10,
+    "category": "67f131eee94540c2c1e7e47e",
+    "description": "A stunning 1-carat diamond ring in 18k white gold.",
+    "reviews": [
+      {
+        "name": "Priya Sharma",
+        "rating": 5,
+        "comment": "Perfect for my engagement!",
+        "user": "507f1f77bcf86cd799439011"
+      },
+      {
+        "name": "Rahul Verma",
+        "rating": 4,
+        "comment": "Great quality, slightly pricey.",
+        "user": "507f191e810c19729de860ea"
+      }
+    ],
+    "rating": 4.5,
+    "numReviews": 2,
+    "price": 125000,
+    "countInStock": 5
+  },
+  {
+    "name": "Gold Chain Necklace",
+    "image": "https://example.com/images/gold-chain-necklace.jpg",
+    "quantity": 25,
+    "category": "67f13267e94540c2c1e7e482",
+    "description": "A 24-inch 22k gold chain, ideal for daily wear.",
+    "reviews": [
+      {
+        "name": "Anita Patel",
+        "rating": 5,
+        "comment": "Shiny and durable!",
+        "user": "507f1f77bcf86cd799439012"
+      }
+    ],
+    "rating": 5,
+    "numReviews": 1,
+    "price": 45000,
+    "countInStock": 20
+  },
+  {
+    "name": "Silver Charm Bracelet",
+    "image": "https://example.com/images/silver-charm-bracelet.jpg",
+    "quantity": 15,
+    "category": "67f13e573f7330708de20a9d",
+    "description": "Sterling silver bracelet with customizable charms.",
+    "reviews": [],
+    "rating": 0,
+    "numReviews": 0,
+    "price": 2500,
+    "countInStock": 10
+  },
+  {
+    "name": "Kids Star Earrings",
+    "image": "https://example.com/images/kids-star-earrings.jpg",
+    "quantity": 30,
+    "category": "67f13d5e3821a6b51a2941b1",
+    "description": "Hypoallergenic star-shaped earrings for kids.",
+    "reviews": [
+      {
+        "name": "Neha Gupta",
+        "rating": 4,
+        "comment": "Cute but one fell off.",
+        "user": "507f191e810c19729de860eb"
+      }
+    ],
+    "rating": 4,
+    "numReviews": 1,
+    "price": 800,
+    "countInStock": 25
+  },
+  {
+    "name": "Men’s Gold Ring",
+    "image": "https://example.com/images/mens-gold-ring.jpg",
+    "quantity": 12,
+    "category": "67f13e573f7330708de20a98",
+    "description": "A bold 22k gold ring for men.",
+    "reviews": [],
+    "rating": 0,
+    "numReviews": 0,
+    "price": 35000,
+    "countInStock": 8
+  },
+  {
+    "name": "Ruby Pendant",
+    "image": "https://example.com/images/ruby-pendant.jpg",
+    "quantity": 8,
+    "category": "67f13e573f7330708de20a9a",
+    "description": "A 14k gold pendant with a ruby gemstone.",
+    "reviews": [
+      {
+        "name": "Suman Rao",
+        "rating": 5,
+        "comment": "Stunning piece!",
+        "user": "507f1f77bcf86cd799439013"
+      }
+    ],
+    "rating": 5,
+    "numReviews": 1,
+    "price": 18000,
+    "countInStock": 6
+  },
+  {
+    "name": "Wedding Band Set",
+    "image": "https://example.com/images/wedding-band-set.jpg",
+    "quantity": 5,
+    "category": "67f13e573f7330708de20a9b",
+    "description": "Matching 18k gold wedding bands for couples.",
+    "reviews": [],
+    "rating": 0,
+    "numReviews": 0,
+    "price": 90000,
+    "countInStock": 3
+  },
+  {
+    "name": "Emerald Necklace",
+    "image": "https://example.com/images/emerald-necklace.jpg",
+    "quantity": 7,
+    "category": "67f1316828f2949da544e059",
+    "description": "A 22k gold necklace with emerald stones.",
+    "reviews": [
+      {
+        "name": "Kiran Desai",
+        "rating": 4,
+        "comment": "Beautiful but heavy.",
+        "user": "507f191e810c19729de860ec"
+      }
+    ],
+    "rating": 4,
+    "numReviews": 1,
+    "price": 65000,
+    "countInStock": 4
+  },
+  {
+    "name": "Silver Anklet",
+    "image": "https://example.com/images/silver-anklet.jpg",
+    "quantity": 20,
+    "category": "67f13e573f7330708de20a9f",
+    "description": "A delicate sterling silver anklet with bells.",
+    "reviews": [],
+    "rating": 0,
+    "numReviews": 0,
+    "price": 1500,
+    "countInStock": 15
+  },
+  {
+    "name": "Vintage Gold Earrings",
+    "image": "https://example.com/images/vintage-gold-earrings.jpg",
+    "quantity": 6,
+    "category": "67f13e573f7330708de20aa0",
+    "description": "Antique-style 22k gold earrings.",
+    "reviews": [
+      {
+        "name": "Rita Singh",
+        "rating": 5,
+        "comment": "Love the vintage look!",
+        "user": "507f1f77bcf86cd799439014"
+      }
+    ],
+    "rating": 5,
+    "numReviews": 1,
+    "price": 28000,
+    "countInStock": 4
+  },
+  {
+    "name": "Custom Name Necklace",
+    "image": "https://example.com/images/custom-name-necklace.jpg",
+    "quantity": 10,
+    "category": "67f13e573f7330708de20a9e",
+    "description": "Personalized 18k gold name necklace.",
+    "reviews": [],
+    "rating": 0,
+    "numReviews": 0,
+    "price": 12000,
+    "countInStock": 8
+  },
+  {
+    "name": "Sapphire Bracelet",
+    "image": "https://example.com/images/sapphire-bracelet.jpg",
+    "quantity": 12,
+    "category": "67f1318b28f2949da544e05f",
+    "description": "A 14k gold bracelet with sapphire stones.",
+    "reviews": [
+      {
+        "name": "Vikram Jain",
+        "rating": 4,
+        "comment": "Elegant design!",
+        "user": "507f191e810c19729de860ed"
+      }
+    ],
+    "rating": 4,
+    "numReviews": 1,
+    "price": 32000,
+    "countInStock": 10
+  },
+  {
+    "name": "Gold Jhumka Earrings",
+    "image": "https://example.com/images/gold-jhumka-earrings.jpg",
+    "quantity": 15,
+    "category": "67f13e573f7330708de20a99",
+    "description": "Traditional 22k gold jhumka earrings.",
+    "reviews": [],
+    "rating": 0,
+    "numReviews": 0,
+    "price": 40000,
+    "countInStock": 12
+  },
+  {
+    "name": "Pearl Ring",
+    "image": "https://example.com/images/pearl-ring.jpg",
+    "quantity": 8,
+    "category": "67f1307f28f2949da544e055",
+    "description": "A 14k gold ring with a natural pearl.",
+    "reviews": [
+      {
+        "name": "Meena Iyer",
+        "rating": 5,
+        "comment": "Simple and classy!",
+        "user": "507f1f77bcf86cd799439015"
+      }
+    ],
+    "rating": 5,
+    "numReviews": 1,
+    "price": 15000,
+    "countInStock": 6
+  },
+  {
+    "name": "Diamond Stud Earrings",
+    "image": "https://example.com/images/diamond-stud-earrings.jpg",
+    "quantity": 10,
+    "category": "67f13e573f7330708de20a99",
+    "description": "0.5-carat diamond studs in 18k white gold.",
+    "reviews": [],
+    "rating": 0,
+    "numReviews": 0,
+    "price": 75000,
+    "countInStock": 7
+  },
+  {
+    "name": "Men’s Silver Chain",
+    "image": "https://example.com/images/mens-silver-chain.jpg",
+    "quantity": 18,
+    "category": "67f13e573f7330708de20a98",
+    "description": "A sturdy sterling silver chain for men.",
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "rating": 4,
+        "comment": "Good value for money.",
+        "user": "507f191e810c19729de860ee"
+      }
+    ],
+    "rating": 4,
+    "numReviews": 1,
+    "price": 3000,
+    "countInStock": 15
+  },
+  {
+    "name": "Gold Bangles Set",
+    "image": "https://example.com/images/gold-bangles-set.jpg",
+    "quantity": 5,
+    "category": "67f1318b28f2949da544e05f",
+    "description": "A set of four 22k gold bangles.",
+    "reviews": [],
+    "rating": 0,
+    "numReviews": 0,
+    "price": 85000,
+    "countInStock": 3
+  },
+  {
+    "name": "Amethyst Pendant",
+    "image": "https://example.com/images/amethyst-pendant.jpg",
+    "quantity": 9,
+    "category": "67f13e573f7330708de20a9a",
+    "description": "A 14k gold pendant with an amethyst stone.",
+    "reviews": [
+      {
+        "name": "Sneha Reddy",
+        "rating": 5,
+        "comment": "Love the purple hue!",
+        "user": "507f1f77bcf86cd799439016"
+      }
+    ],
+    "rating": 5,
+    "numReviews": 1,
+    "price": 14000,
+    "countInStock": 7
+  },
+  {
+    "name": "Kids Butterfly Necklace",
+    "image": "https://example.com/images/kids-butterfly-necklace.jpg",
+    "quantity": 25,
+    "category": "67f13d5e3821a6b51a2941b1",
+    "description": "A cute butterfly necklace in silver for kids.",
+    "reviews": [],
+    "rating": 0,
+    "numReviews": 0,
+    "price": 1200,
+    "countInStock": 20
+  },
+  {
+    "name": "Gemstone Cocktail Ring",
+    "image": "https://example.com/images/gemstone-cocktail-ring.jpg",
+    "quantity": 6,
+    "category": "67f13e573f7330708de20a9c",
+    "description": "A bold 18k gold ring with mixed gemstones.",
+    "reviews": [
+      {
+        "name": "Deepa Nair",
+        "rating": 5,
+        "comment": "Statement piece!",
+        "user": "507f191e810c19729de860ef"
+      }
+    ],
+    "rating": 5,
+    "numReviews": 1,
+    "price": 55000,
+    "countInStock": 4
+  }
+]
