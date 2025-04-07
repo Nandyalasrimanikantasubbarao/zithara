@@ -28,7 +28,7 @@ import PlaceOrder from "./pages/Orders/PlaceOrder.jsx";
 import Order from "./pages/Orders/Order.jsx";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import UserOrder from "./pages/user/UserOrder.jsx";
-import OrderList from "./pages/admin/Orderlist.jsx";
+import OrderList from "./pages/admin/OrderList.jsx";
 import AdminDashboard from "./pages/admin/AdminDashBoard.jsx";
 
 const router = createBrowserRouter(
