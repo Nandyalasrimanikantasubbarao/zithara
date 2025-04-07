@@ -5,7 +5,7 @@ import {
   useUpdateCategoryMutation,
   useDeleteCategoryMutation,
   useFetchCategoriesQuery,
-} from "../../redux/api/categoryApiAlice";
+} from "../../redux/api/categoryApiSlice";
 import CategoryForm from "../../components/CategoryFrom";
 import Modal from "../../components/Model";
 import AdminMenu from "./AdminMenu";
