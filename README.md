@@ -8,12 +8,6 @@ A full-stack jewelry e-commerce website with a chatbot that finds similar jewelr
 - `backend/` – Express.js server (handles MongoDB/database)
 - `chatbot/` – Python Flask server (AI-powered image-based chatbot)
 
-## 🚀 Scripts
-
-```bash
-npm run frontend     # Runs React frontend on Vite
-npm run backend      # Runs Express.js backend with nodemon
-npm run dev          # Runs both frontend and backend concurrently
 
 🔧 Setup Instructions
 1. Clone the Repository
@@ -83,3 +77,11 @@ dist/
 uploads/
 👤 Author
 Manikanta – Passionate web developer
+
+## 🚀 Scripts
+
+```bash
+npm run frontend     # Runs React frontend on Vite
+npm run backend      # Runs Express.js backend with nodemon
+npm run dev          # Runs both frontend and backend concurrently
+
