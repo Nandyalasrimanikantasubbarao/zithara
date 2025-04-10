@@ -22,7 +22,6 @@ const jewelryProductSchema = mongoose.Schema(
     quantity: { type: Number, required: true },
     category: { type: ObjectId, ref: "Category", required: true },
     description: { type: String, required: true },
-    // material: { type: String }, // optional: gold, silver, diamond etc.
     reviews: [reviewSchema],
     rating: { type: Number, required: true, default: 0 },
     numReviews: { type: Number, required: true, default: 0 },

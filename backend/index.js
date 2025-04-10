@@ -3,7 +3,7 @@ import express from "express";
 import path from "path";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-import cors from "cors"; // ✅ ADD THIS
+import cors from "cors";
 
 // routes
 import userRoutes from "./routes/userRoutes.js";

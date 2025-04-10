@@ -72,8 +72,6 @@ const removeProduct = asyncHandler(async (req, res) => {
 
 const fetchProducts = asyncHandler(async (req, res) => {
   try {
-    const pageSize = 6;
-
     const keyword = req.query.keyword
       ? {
           name: {
@@ -83,14 +81,10 @@ const fetchProducts = asyncHandler(async (req, res) => {
         }
       : {};
 
-    const count = await Product.countDocuments({ ...keyword });
-    const products = await Product.find({ ...keyword }).limit(pageSize);
+    const products = await Product.find({ ...keyword });
 
     res.json({
       products,
-      page: 1,
-      pages: Math.ceil(count / pageSize),
-      hasMore: false,
     });
   } catch (error) {
     console.error(error);
