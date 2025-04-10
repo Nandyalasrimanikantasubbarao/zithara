@@ -16,10 +16,10 @@ const OrderList = () => {
           {error?.data?.message || error.error}
         </Message>
       ) : (
-        <table className="container mx-auto">
+        <table className="container ml-32  w-[50rem]">
           <AdminMenu />
 
-          <thead className="w-full border">
+          <thead className=" border">
             <tr className="mb-[5rem]">
               <th className="text-left pl-1">ITEMS</th>
               <th className="text-left pl-1">ID</th>
@@ -32,7 +32,7 @@ const OrderList = () => {
             </tr>
           </thead>
 
-          <tbody>
+          <tbody className="">
             {orders.map((order) => (
               <tr key={order._id}>
                 <td>
