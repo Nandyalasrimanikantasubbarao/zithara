@@ -58,7 +58,7 @@ const Shop = () => {
   return (
     <div className="container mx-auto overflow-hidden h-[900px] flex">
       {/* Categories Sidebar - Fixed */}
-      <div className="bg-[#151515] p-3 mt-2 mb-2 w-[15rem] flex-shrink-0 overflow-hidden">
+      <div className="bg-[#151515] ml-10 p-3 mt-2 mb-2 w-[15rem] flex-shrink-0 overflow-hidden">
         <h2 className="h4 text-center py-2 text-white bg-black rounded-full mb-2">
           Filter by Categories
         </h2>

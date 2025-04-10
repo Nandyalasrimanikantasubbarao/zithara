@@ -13,7 +13,7 @@ function App() {
     <>
       <ToastContainer />
       <Navigation />
-      <main className=" bg-pink-200 min-h-screen relative">
+      <main className=" bg-pink-200 overflow-hidden  min-h-screen relative">
         <Outlet />
       </main>
       <div className="fixed bottom-4 right-4 flex justify-end p-0 bg-pink-200 rounded-full shadow-lg">

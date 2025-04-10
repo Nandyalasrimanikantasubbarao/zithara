@@ -10,18 +10,16 @@ import { clearCartItems } from "../../redux/features/cart/cartSlice";
 
 const PlaceOrder = () => {
   const navigate = useNavigate();
-
   const cart = useSelector((state) => state.cart);
-
   const [createOrder, { isLoading, error }] = useCreateOrderMutation();
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!cart.shippingAddress.address) {
       navigate("/shipping");
     }
   }, [cart.paymentMethod, cart.shippingAddress.address, navigate]);
-
-  const dispatch = useDispatch();
 
   const placeOrderHandler = async () => {
     try {
@@ -45,97 +43,109 @@ const PlaceOrder = () => {
     <>
       <ProgressSteps step1 step2 step3 />
 
-      <div className="container mx-auto mt-8">
+      <div className="container ml-7 my-6">
         {cart.cartItems.length === 0 ? (
           <Message>Your cart is empty</Message>
         ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr>
-                  <td className="px-1 py-2 text-left align-top">Image</td>
-                  <td className="px-1 py-2 text-left">Product</td>
-                  <td className="px-1 py-2 text-left">Quantity</td>
-                  <td className="px-1 py-2 text-left">Price</td>
-                  <td className="px-1 py-2 text-left">Total</td>
-                </tr>
-              </thead>
+          <div className="overflow-hidden mb-6">
+            <div className="flex justify-center flex-col items-center">
+              <h2 className="text-2xl font-semibold mb-4">Order Items</h2>
 
-              <tbody>
-                {cart.cartItems.map((item, index) => (
-                  <tr key={index}>
-                    <td className="p-2">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-16 h-16 object-cover"
-                      />
-                    </td>
-
-                    <td className="p-2">
-                      <Link to={`/product/${item.product}`}>{item.name}</Link>
-                    </td>
-                    <td className="p-2">{item.qty}</td>
-                    <td className="p-2">{item.price.toFixed(2)}</td>
-                    <td className="p-2">
-                      INR {(item.qty * item.price).toFixed(2)}
-                    </td>
+              <table className="w-[40rem] border-collapse mt-10 shadow-lg rounded-lg overflow-hidden">
+                <thead className="bg-gray-200 text-gray-700">
+                  <tr>
+                    <th className="p-2 text-left">Image</th>
+                    <th className="p-2 text-left">Product</th>
+                    <th className="p-2 text-left">Quantity</th>
+                    <th className="p-2 text-left">Price</th>
+                    <th className="p-2 text-left">Total</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="bg-white">
+                  {cart.cartItems.map((item, index) => (
+                    <tr key={index} className="border-t">
+                      <td className="p-2">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-[1rem] h-16 object-cover rounded-md"
+                        />
+                      </td>
+                      <td className="p-2">
+                        <Link
+                          to={`/product/${item.product}`}
+                          className="text-blue-600 hover:underline"
+                        >
+                          {item.name}
+                        </Link>
+                      </td>
+                      <td className="p-2">{item.qty}</td>
+                      <td className="p-2">INR {item.price.toFixed(2)}</td>
+                      <td className="p-2 font-semibold">
+                        INR {(item.qty * item.price).toFixed(2)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
 
-        <div className="mt-8">
-          <h2 className="text-2xl font-semibold mb-5">Order Summary</h2>
-          <div className="flex justify-between flex-wrap p-8 bg-white">
-            <ul className="text-lg">
+        <div className="grid w-[70rem] justify-center ml-36 md:grid-cols-3 gap-3 mt-4">
+          <div className="md:col-span-1 m-2 p-4 rounded-lg shadow-md bg-white text-sm">
+            <h2 className="text-lg font-bold mb-3">Order Summary</h2>
+            <ul className="space-y-2">
               <li>
-                <span className="font-semibold mb-4">Items:</span> INR{" "}
+                <span className="font-medium">Items:</span> INR{" "}
                 {cart.itemsPrice}
               </li>
               <li>
-                <span className="font-semibold mb-4">Shipping:</span> INR{" "}
+                <span className="font-medium">Shipping:</span> INR{" "}
                 {cart.shippingPrice}
               </li>
               <li>
-                <span className="font-semibold mb-4">Tax:</span> INR{" "}
-                {cart.taxPrice}
+                <span className="font-medium">Tax:</span> INR {cart.taxPrice}
               </li>
-              <li>
-                <span className="font-semibold mb-4">Total:</span> INR{" "}
-                {cart.totalPrice}
+              <li className="text-base font-semibold border-t pt-2">
+                Total: INR {cart.totalPrice}
               </li>
             </ul>
 
-            {error && <Message variant="danger">{error.data.message}</Message>}
+            {error && (
+              <Message variant="danger" className="mt-3 text-sm">
+                {error.data.message}
+              </Message>
+            )}
 
-            <div>
-              <h2 className="text-2xl font-semibold mb-4">Shipping</h2>
-              <p>
-                <strong>Address:</strong> {cart.shippingAddress.address},{" "}
-                {cart.shippingAddress.city} {cart.shippingAddress.postalCode},{" "}
-                {cart.shippingAddress.country}
-              </p>
-            </div>
+            <button
+              onClick={placeOrderHandler}
+              disabled={cart.cartItems.length === 0}
+              className="w-full mt-4 bg-pink-600 hover:bg-pink-700 text-white font-semibold py-1.5 px-3 rounded-full transition text-sm"
+            >
+              Place Order
+            </button>
 
-            <div>
-              <h2 className="text-2xl font-semibold mb-4">Payment Method</h2>
-              <strong>Method:</strong> {cart.paymentMethod}
-            </div>
+            {isLoading && <Loader />}
           </div>
 
-          <button
-            type="button"
-            className="bg-pink-500 text-white py-2 px-4 rounded-full text-lg w-full mt-4"
-            disabled={cart.cartItems === 0}
-            onClick={placeOrderHandler}
-          >
-            Place Order
-          </button>
+          {/* Shipping Info */}
+          <div className="md:col-span-1 m-2 p-4 rounded-lg shadow-md bg-white text-sm">
+            <h2 className="text-lg font-bold mb-3">Shipping</h2>
+            <p>
+              <strong>Address:</strong> {cart.shippingAddress.address},{" "}
+              {cart.shippingAddress.city} {cart.shippingAddress.postalCode},{" "}
+              {cart.shippingAddress.country}
+            </p>
+          </div>
 
-          {isLoading && <Loader />}
+          {/* Payment Method */}
+          <div className="md:col-span-1 m-2 p-4 rounded-lg shadow-md bg-white text-sm">
+            <h2 className="text-lg font-bold mb-3">Payment Method</h2>
+            <p>
+              <strong>Method:</strong> {cart.paymentMethod}
+            </p>
+          </div>
         </div>
       </div>
     </>
