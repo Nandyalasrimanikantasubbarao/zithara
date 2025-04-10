@@ -109,12 +109,12 @@ const Shop = () => {
       {/* Products Section - Scrollable */}
       <div className="flex-1 p-3 overflow-y-auto h-screen">
         <h2 className="h4 text-center mb-2">{products?.length} Products</h2>
-        <div className="flex flex-wrap">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
           {products.length === 0 ? (
             <Loader />
           ) : (
             products?.map((p) => (
-              <div className="p-3" key={p._id}>
+              <div key={p._id}>
                 <ProductCard p={p} />
               </div>
             ))

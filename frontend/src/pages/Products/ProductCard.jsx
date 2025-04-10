@@ -17,70 +17,62 @@ const ProductCard = ({ p }) => {
   };
 
   return (
-    <div className="max-w-sm relative bg-[#1A1A1A] rounded-lg shaodw dark:bg-gray-800 dark:border-gray-700 ">
+    <div className="w-full h-[26rem] bg-[#1A1A1A] rounded-2xl shadow-lg dark:bg-gray-800 flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
       <section className="relative">
         <Link to={`/product/${p._id}`}>
-          <span className="absolute bottom-3 right-3 bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
-            {p?.brand}
-          </span>
-          <div className="w-full aspect-square">
+          {/* Optional badge like brand */}
+          {p?.brand && (
+            <span className="absolute bottom-3 right-3 bg-pink-100 text-pink-800 text-xs font-medium px-2 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300 z-10">
+              {p?.brand}
+            </span>
+          )}
+
+          <div className="w-full h-48 overflow-hidden rounded-t-2xl">
             <img
-              className="w-full h-full rounded-lg object-cover"
+              className="w-full h-full object-cover"
               src={p.image}
               alt={p.name}
-              // style={{ height: "170px", objectFit: "cover" }}
             />
           </div>
         </Link>
-        <HeartIcon product={p} />
+
+        <div className="absolute top-2 left-2 z-10">
+          <HeartIcon product={p} />
+        </div>
       </section>
 
-      <div className="p-5">
-        <div className="flex justify-between">
-          <h5 className="mb-2 text-xl  text-white">{p?.name}</h5>
-
-          <p className=" font-semibold text-pink-500">
-            {p?.price?.toLocaleString("en-US", {
-              style: "currency",
-              currency: "INR",
-            })}
+      <div className="p-4 flex-1 flex flex-col justify-between">
+        <div className="mb-2">
+          <div className="flex justify-between items-center mb-1">
+            <h5 className="text-md font-semibold text-white truncate">
+              {p?.name}
+            </h5>
+            <p className="text-pink-500 text-sm font-bold">
+              {p?.price?.toLocaleString("en-IN", {
+                style: "currency",
+                currency: "INR",
+              })}
+            </p>
+          </div>
+          <p className="text-gray-400 text-sm line-clamp-2">
+            {p?.description?.substring(0, 80)}...
           </p>
         </div>
 
-        <p className="mb-3 font-normal text-[#CFCFCF]">
-          {p?.description?.substring(0, 60)} ...
-        </p>
-
-        <section className="flex justify-between items-center">
+        <div className="flex justify-between items-center mt-4">
           <Link
             to={`/product/${p._id}`}
-            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-pink-700 rounded-lg hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+            className="text-sm bg-pink-700 text-white px-3 py-1.5 rounded-lg hover:bg-pink-800 transition"
           >
             Read More
-            <svg
-              className="w-3.5 h-3.5 ml-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              />
-            </svg>
           </Link>
-
           <button
-            className="p-2 rounded-full"
+            className="bg-gray-700 hover:bg-gray-800 p-2 rounded-full"
             onClick={() => addToCartHandler(p, 1)}
           >
-            <AiOutlineShoppingCart size={25} color="white" />
+            <AiOutlineShoppingCart size={22} color="white" />
           </button>
-        </section>
+        </div>
       </div>
     </div>
   );
