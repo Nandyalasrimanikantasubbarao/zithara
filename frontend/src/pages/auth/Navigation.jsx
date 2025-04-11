@@ -179,7 +179,7 @@ function Navigation() {
             </li>
             <li>
               <Link
-                to="/logout"
+                to="/login"
                 onClick={logoutHandler}
                 className="block px-4 py-2 hover:bg-white hover:text-black"
               >
