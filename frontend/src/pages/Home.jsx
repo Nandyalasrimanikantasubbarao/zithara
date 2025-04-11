@@ -48,9 +48,7 @@ function Home() {
         {isLoading ? (
           <Loader />
         ) : isError ? (
-          <Message variant="danger">
-            {isError?.data.message || isError.error}
-          </Message>
+          <Message variant="danger">{isError?.data || isError.error}</Message>
         ) : (
           <div className="mt-28 ml-8 px-8">
             <div className="flex flex-col md:flex-row justify-between items-center mb-12">
