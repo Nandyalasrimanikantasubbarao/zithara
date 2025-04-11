@@ -17,7 +17,7 @@ import { authenticate, authorizeAdmin } from "../middleware/authMiddleware.js";
 
 router
   .route("/")
-  .post(authenticate, createOrder)
+  .post(authenticate,authorizeAdmin, createOrder)
   .get(authenticate, getAllOrders);
 
 router.route("/mine").get(authenticate, getUserOrders);
@@ -29,5 +29,7 @@ router.route("/:id/pay").put(authenticate, markOrderAsPaid);
 router
   .route("/:id/deliver")
   .put(authenticate, authorizeAdmin, markOrderAsDelivered);
+
+
 
 export default router;
