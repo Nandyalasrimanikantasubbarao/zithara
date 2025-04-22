@@ -10,10 +10,9 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-# Load model
+# Load model - updated to match the saved embedding dimensions
 device = "cpu"
-model, preprocess = clip.load("RN50", device=device)
-
+model, preprocess = clip.load("ViT-B/32", device=device)
 
 # Load precomputed image embeddings
 with open("image_embeddings.pkl", "rb") as f:
@@ -32,9 +31,7 @@ pattern_responses = {
 def chat():
     data = request.get_json()
     message = data.get('message', '').lower().strip()
-
     reply = pattern_responses.get(message, "I'm not sure how to respond to that. Try asking for help or upload an image!")
-
     return jsonify({'reply': reply})
 
 @app.route('/api/upload', methods=['POST'])
@@ -44,21 +41,20 @@ def upload():
 
     with torch.no_grad():
         query_embedding = model.encode_image(image).cpu().numpy()
+        query_embedding = query_embedding / np.linalg.norm(query_embedding, axis=-1, keepdims=True) 
 
-    similarities = {
-        pid: np.dot(query_embedding, emb.T)[0][0]
-        for pid, emb in image_embeddings.items()
-    }
 
-    best_match = max(similarities, key=similarities.get)
-    product_route = f"/product/{best_match}"
+    embeddings = image_embeddings["embeddings"]
+    routes = image_embeddings["routes"]         
+
+    similarities = np.dot(embeddings, query_embedding.T).squeeze() 
+
+
+    best_index = np.argmax(similarities)
+    product_route = routes[best_index]
 
     return jsonify({'route': product_route, 'reply': 'Found a matching product! Click below to view it:'})
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5001))
     app.run(host="0.0.0.0", port=port)
-
-
-
-
